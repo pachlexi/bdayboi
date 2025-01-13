@@ -56,9 +56,7 @@
     bottom: 40%; /* Distance from the bottom edge */
     transform: translateX(-50%); 
     font-size: 16px; /* Font size */
-    /* background-image: url('../../public/images/cake/susLink.png'); */
-    background-image: url('../../public/images/cake/blueRecord.svg');
-
+    background-image: url('../../public/images/cake/susLink.png');
     background-color: transparent;
     background-size: cover;
     border: none; /* Remove default border */
@@ -152,13 +150,18 @@
   }
   
   /* CANDLES */
-.candles {
+  .candles {
+    background-image: url('../../public/images/cake/candles.svg');
+    background-color: transparent;
+    background-size: cover;
+    border: none; 
+
     position: absolute; /* Position candles absolutely within the grid */
     top: 19%;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center the image */
     width: 140px; /* Set the image width */
-    height: auto; /* Maintain aspect ratio */
+    height: 100px; /* Maintain aspect ratio */
     }
 
   /* RECORD CAKE AND ANIMATION */
@@ -176,12 +179,33 @@
   }
   
   .record {
-    width: 80px; /* Set the width of each record */
+    width: 85px; /* Set the width of each record */
     height: 80px; /* Maintain a square aspect ratio */
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove default padding */
     animation: spin 5s linear infinite; /* Smooth spinning animation */
   }
+
+  .blueRecord {
+    background-image: url('../../public/images/cake/blueRecord.svg');
+  }
+  
+  .greenRecord {
+    background-image: url('../../public/images/cake/greenRecord.svg');
+  }
+  
+  .pinkRecord {
+    background-image: url('../../public/images/cake/pinkRecord.svg');
+  }
+  
+  .purpleRecord {
+    background-image: url('../../public/images/cake/purpleRecord.svg');
+  }
+  
+  .yellowRecord {
+    background-image: url('../../public/images/cake/yellowRecord.svg');
+  }
+  
 
   @keyframes spin {
     from {

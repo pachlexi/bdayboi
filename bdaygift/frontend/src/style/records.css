@@ -65,27 +65,6 @@
     right: 35%;
     top: 20%; 
     font-size: 22px;
-    /* font-weight: bold; */
-    /* margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center; */
-  }
-  
-  .active-image-container {
-    position: absolute; /* Position relative to the viewport */
-    right: 5%;
-    top: 16%; /* Distance from the bottom edge */
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    /* margin-top: 20px; */
-  }
-  
-  .spinning-image {
-    width: 400px; /* Adjust size as needed */
-    height: 400px; /* Maintain square aspect ratio */
-    animation: spin 10s linear infinite; /* Spinning animation */
   }
   
   @keyframes spin {
@@ -97,3 +76,102 @@
     }
   }
   
+
+  .active-image {
+    position: absolute; /* Position relative to the viewport */
+    right: 5%;
+    top: 16%; /* Distance from the bottom edge */
+    display: flex;
+
+    width: 400px; /* Set the width of the image container */
+    height: 400px; /* Set the height of the image container */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image */
+    margin: 0 auto; /* Center the div on the page */
+    animation: spin 10s linear infinite; /* Optional spinning animation */
+  }
+  
+  .record1 {
+    background-image: url('../../public/images/records/record1.svg');
+  }
+  
+   .record2 {
+    background-image: url('../../public/images/records/record2.svg');
+  }
+  
+  .record3 {
+    background-image: url('../../public/images/records/record3.svg');
+  } 
+
+  .record4 {
+    background-image: url('../../public/images/records/record4.svg');
+  }
+  
+   .record5 {
+    background-image: url('../../public/images/records/record5.svg');
+  }
+  
+  .record6 {
+    background-image: url('../../public/images/records/record6.svg');
+  } 
+
+  .record7 {
+    background-image: url('../../public/images/records/record7.svg');
+  }
+  
+  .record8 {
+    background-image: url('../../public/images/records/record8.svg');
+  } 
+
+  .record9 {
+    background-image: url('../../public/images/records/record9.svg');
+  }
+  
+  .record10 {
+    background-image: url('../../public/images/records/record10.svg');
+  } 
+
+  .record11 {
+    background-image: url('../../public/images/records/record11.svg');
+  }
+  
+  .record12 {
+    background-image: url('../../public/images/records/record12.svg');
+  } 
+  
+  .record13 {
+    background-image: url('../../public/images/records/record13.svg');
+  } 
+
+  .record14 {
+    background-image: url('../../public/images/records/record14.svg');
+  }
+  
+  .record15 {
+    background-image: url('../../public/images/records/record15.svg');
+  } 
+
+  .record16 {
+    background-image: url('../../public/images/records/record16.svg');
+  }
+  
+  .record17 {
+    background-image: url('../../public/images/records/record17.svg');
+  } 
+   
+    
+  .record18 {
+    background-image: url('../../public/images/records/record18.svg');
+  } 
+
+  .record19 {
+    background-image: url('../../public/images/records/record19.svg');
+  }
+  
+  .record20 {
+    background-image: url('../../public/images/records/record20.svg');
+  } 
+
+  .record21 {
+    background-image: url('../../public/images/records/record21.svg');
+  }

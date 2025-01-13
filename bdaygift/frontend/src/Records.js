@@ -3,16 +3,12 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./style/records.css";
 
 function Records() {
-  // State to keep track of the currently displayed text and its color
   const [activeTrack, setActiveTrack] = useState({ text: "", color: "" });
-  // State to keep track of the currently displayed text and its color
   const [activeText, setActiveText] = useState({ text: "", color: "" });
-  // State to keep track of the currently displayed image
-  const [activeImage, setActiveImage] = useState("");
+  const [activeImageClass, setActiveImageClass] = useState(""); // Store CSS class for image
 
-  // Array of texts corresponding to the buttons
   const tracks = [
-    ["Cigarette Daydreams"],
+    "Cigarette Daydreams",
     "Apple Cider",
     "APT.",
     "See You In My Nightmares",
@@ -35,7 +31,6 @@ function Records() {
     "Tuesday",
   ];
 
-  // Array of texts corresponding to the buttons
   const texts = [
     // record 1 text
     "When we went to the concert for Cage the Elephant, I remember the drive up there and me trying to memorize songs after the first listen. It was all worth it. I really loved this concert with you and I still tear up a bit hearing this song. Very glad we got matching shirts from this concert.",
@@ -81,49 +76,44 @@ function Records() {
     "My life has been feeling like this song since the first day I met you. I am so so excited to see you again and ready to make many more memories with you next semester. Happy birthday official adult Lincoln, I love you.",
   ];
 
-  // Array of images corresponding to the buttons
-  const images = [
-    "/images/records/record1OK.png",
-    "/images/records/record2.svg",
-    "/images/records/record3.svg",
-    "/images/records/record4.svg",
-    "/images/records/record5.svg",
-    "/images/records/record6.svg",
-    "/images/records/record7.svg",
-    "/images/records/record8.svg",
-    "/images/records/record9.svg",
-    "/images/records/record10.svg",
-    "/images/records/record11.svg",
-    "/images/records/record12.svg",
-    "/images/records/record13.svg",
-    "/images/records/record14.svg",
-    "/images/records/record15.svg",
-    "/images/records/record16.svg",
-    "/images/records/record17.svg",
-    "/images/records/record18.svg",
-    "/images/records/record19.svg",
-    "/images/records/record20.svg",
-    "/images/records/record21.svg",
+  const colors = ["#6fa8dc", "#93c47d", "#d48bb9", "#f9cb9c", "#b4a7d6"];
+
+  // CSS class names corresponding to images
+  const imageClasses = [
+    "record1", // CSS class for record 1
+    "record2", // CSS class for record 2
+    "record3", // CSS class for record 3
+    "record4", // CSS class for record 4
+    "record5", // CSS class for record 5
+    "record6", // CSS class for record 6
+    "record7", // CSS class for record 7
+    "record8", // CSS class for record 8
+    "record9", // CSS class for record 9
+    "record10", // CSS class for record 10
+    "record11", // CSS class for record 11
+    "record12", // CSS class for record 12
+    "record13", // CSS class for record 13
+    "record14", // CSS class for record 14
+    "record15", // CSS class for record 15
+    "record16", // CSS class for record 16
+    "record17", // CSS class for record 17
+    "record18", // CSS class for record 18
+    "record19", // CSS class for record 19
+    "record20", // CSS class for record 20
+    "record21", // CSS class for record 21
   ];
 
-  // Array of colors
-  const colors = ["#6fa8dc", "#93c47dff", "#d48bb9ff", "#f9cb9c", "#b4a7d6ff"];
-
-  // Function to handle button clicks
   const handleButtonClick = (index) => {
-    // Set the text, its corresponding color, and the image
     setActiveText({ text: texts[index], color: colors[index % colors.length] });
     setActiveTrack({
       text: tracks[index],
       color: colors[index % colors.length],
     });
-
-    setActiveImage(images[index]);
+    setActiveImageClass(imageClasses[index]); // Set the CSS class for the active image
   };
 
   return (
     <div className="main">
-      {/* Spotify Playlist Embed */}
       <iframe
         className="spotify"
         src="https://open.spotify.com/embed/playlist/7lq8zHtDsySDBnSBB43fy9?utm_source=generator"
@@ -132,52 +122,33 @@ function Records() {
         loading="lazy"
       ></iframe>
 
-      {/* Buttons and Text Display */}
       <div className="button-container">
-        {/* Generate buttons for numbers 1 to 21 */}
         {texts.map((_, index) => (
           <button
             key={index}
             className="record-button"
             onClick={() => handleButtonClick(index)}
-            style={{
-              backgroundColor: colors[index % colors.length], // Cycle through colors array
-            }}
+            style={{ backgroundColor: colors[index % colors.length] }}
           >
             {index + 1}
           </button>
         ))}
       </div>
 
-      {/* Display the active track with its corresponding color */}
       {activeTrack.text && (
-        <div
-          className="active-track"
-          style={{
-            color: activeTrack.color, // Set text color to match button color
-          }}
-        >
+        <div className="active-track" style={{ color: activeTrack.color }}>
           {activeTrack.text}
         </div>
       )}
 
-      {/* Display the active text with its corresponding color */}
       {activeText.text && (
-        <div
-          className="active-text"
-          style={{
-            color: activeText.color, // Set text color to match button color
-          }}
-        >
+        <div className="active-text" style={{ color: activeText.color }}>
           {activeText.text}
         </div>
       )}
 
-      {/* Display the active spinning image */}
-      {activeImage && (
-        <div className="active-image-container">
-          <img src={activeImage} alt="Spinning" className="spinning-image" />
-        </div>
+      {activeImageClass && (
+        <div className={`active-image ${activeImageClass}`}></div> // Add the dynamic class for the image
       )}
     </div>
   );

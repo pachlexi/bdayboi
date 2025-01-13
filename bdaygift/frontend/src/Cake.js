@@ -2,20 +2,35 @@ import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import confetti from "canvas-confetti";
 import "./style/cake.css";
-// import candles from "/images/cake/candles.svg";
+import hbdsong from "./soundEffects/hbdSong.mp3";
+import itsaparty from "./soundEffects/itsaparty.mp3";
+import sussy from "./soundEffects/sussy.mp3";
 
 function Cake() {
-  const confettiAudioRef = useRef(null);
-  const partyAudioRef = useRef(null);
-  const susAudioRef = useRef(null);
-  const [showText4, setShowText4] = useState(false); // State to control visibility of text4
-  const [showText6, setShowText6] = useState(false); // State to control visibility of text6
+  // Create a ref for the audio object
+  const bdayAudio = useRef(new Audio(hbdsong));
+  const itsapartyAudio = useRef(new Audio(itsaparty));
+  const sussyAudio = useRef(new Audio(sussy));
 
   const playAudio = (audioRef) => {
-    if (audioRef.current) {
-      audioRef.current.play();
+    const audio = audioRef.current;
+
+    if (!audio.paused) {
+      // If audio is already playing, do nothing
+      return;
     }
+
+    // Play the audio
+    audio.play();
+
+    // Ensure the audio is stopped when it ends
+    audio.onended = () => {
+      console.log("Audio has finished playing.");
+    };
   };
+
+  const [showText4, setShowText4] = useState(false); // State to control visibility of text4
+  const [showText6, setShowText6] = useState(false); // State to control visibility of text6
 
   const handleConfetti = () => {
     confetti({
@@ -27,12 +42,12 @@ function Cake() {
     });
   };
 
-  const images = [
-    "/images/cake/blueRecord.svg",
-    "/images/cake/greenRecord.svg",
-    "/images/cake/pinkRecord.svg",
-    "/images/cake/purpleRecord.svg",
-    "/images/cake/yellowRecord.svg",
+  const recordClasses = [
+    "blueRecord",
+    "greenRecord",
+    "pinkRecord",
+    "purpleRecord",
+    "yellowRecord",
   ];
 
   const shuffleArray = (array) => {
@@ -89,51 +104,33 @@ function Cake() {
         <StyledText text={text} colors={colors} />
       </h1>
 
+      {/* Candles Image */}
+      <button className="candles" alt="Candles"></button>
+
       {/* Buttons and Audio */}
       <button
         className="confettiButton"
         onClick={() => {
           handleConfetti();
-          playAudio(confettiAudioRef);
+          playAudio(bdayAudio);
         }}
       ></button>
-      <audio
-        ref={confettiAudioRef}
-        src="/soundEffects/hbdSong.mp3"
-        alt="HBD SONG"
-      ></audio>
 
       <button
         className="itsAParty"
         onClick={() => {
-          playAudio(partyAudioRef);
+          playAudio(itsapartyAudio);
           setShowText6(true);
         }}
       ></button>
-      <audio
-        ref={partyAudioRef}
-        src="/soundEffects/itsaparty.mp3"
-        alt="ITS A PARTY SOUND EFFECT"
-      ></audio>
 
       <button
         className="susLink"
         onClick={() => {
-          playAudio(susAudioRef);
+          playAudio(sussyAudio);
           setShowText4(true); // Show text4 when clicking Sus button
         }}
       ></button>
-      <audio
-        ref={susAudioRef}
-        src="/soundEffects/sussy.mp3"
-        alt="SUSSY SOUND EFFECT"
-      ></audio>
-
-      {/* Candles Image */}
-      {/* <img className="candles" src="/images/cake/candles.svg" alt="Candles" /> */}
-      <svg className="candles">
-        <path alt="Candles" />
-      </svg>
       {/* Record Cake */}
       <div className="cake-grid">
         {[
@@ -142,19 +139,21 @@ function Cake() {
           6, // Row 3
           6, // Row 4
         ].map((count, rowIndex) => {
-          const shuffledImages = shuffleArray(
-            Array.from({ length: count }, (_, i) => images[i % images.length])
+          const shuffledClasses = shuffleArray(
+            Array.from(
+              { length: count },
+              (_, i) => recordClasses[i % recordClasses.length]
+            )
           );
 
           return (
             <div key={rowIndex} className="row">
-              {shuffledImages.map((src, columnIndex) => (
-                <img
+              {shuffledClasses.map((className, columnIndex) => (
+                <div
                   key={`${rowIndex}-${columnIndex}`}
-                  src={src}
+                  className={`record ${className}`}
                   alt={`Record ${rowIndex}-${columnIndex}`}
-                  className="record"
-                />
+                ></div>
               ))}
             </div>
           );

@@ -4,18 +4,30 @@ import Cake from "./Cake";
 import Records from "./Records";
 import "./style/navButtons.css";
 import "bootstrap/dist/css/bootstrap.css";
+import metalPipe from "./soundEffects/metalPipe.mp3";
 
 const App = () => {
   // Track the current view: 0 = Memes, 1 = Cake, 2 = Records
   // Default to Memes view
   const [currentView, setCurrentView] = useState(1);
 
-  const audioRef = useRef(null); // Create a reference to the audio element
+  const metalPipeAudio = useRef(new Audio(metalPipe));
 
-  const playSong = () => {
-    if (audioRef.current) {
-      audioRef.current.play(); // Play the audio
+  const playAudio = (audioRef) => {
+    const audio = audioRef.current;
+
+    if (!audio.paused) {
+      // If audio is already playing, do nothing
+      return;
     }
+
+    // Play the audio
+    audio.play();
+
+    // Ensure the audio is stopped when it ends
+    audio.onended = () => {
+      console.log("Audio has finished playing.");
+    };
   };
   return (
     <div>
@@ -24,7 +36,7 @@ const App = () => {
       <button
         className="button0"
         onClick={() => {
-          playSong(); // Play the audio
+          playAudio(metalPipeAudio); // Play the audio
           setCurrentView(0); // Switch to Memes view
         }}
       ></button>
@@ -33,7 +45,7 @@ const App = () => {
       <button
         className="button1"
         onClick={() => {
-          playSong();
+          playAudio(metalPipeAudio); // Play the audio
           setCurrentView(1);
         }}
       ></button>
@@ -42,17 +54,10 @@ const App = () => {
       <button
         className="button2"
         onClick={() => {
-          playSong();
+          playAudio(metalPipeAudio); // Play the audio
           setCurrentView(2);
         }}
       ></button>
-
-      {/* METAL PIPE SOUND EFFECT */}
-      <audio
-        ref={audioRef}
-        src="/soundEffects/metalPipe.mp3" // Replace with your desired audio URL
-        alt="METAL PIPE SOUND EFFECT"
-      ></audio>
 
       {/* Conditional Rendering */}
       {currentView === 0 && <Memes />}

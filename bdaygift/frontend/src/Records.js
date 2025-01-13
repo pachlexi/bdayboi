@@ -83,7 +83,7 @@ function Records() {
 
   // Array of images corresponding to the buttons
   const images = [
-    "/images/records/record1.svg",
+    "/images/records/record1.png",
     "/images/records/record2.svg",
     "/images/records/record3.svg",
     "/images/records/record4.svg",

@@ -1,0 +1,99 @@
+/* styles the Records.js page */
+
+/* Import the monoton montserrat and font */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;700&display=swap');
+
+
+/* BACKGROUND COLOR */
+.main {
+    height: 100vh; /* Full screen height */
+    background-color: #fff5e5; /* Background color for the page */
+  }
+
+  .spotify {
+    border-radius: "12px";
+    width: 35%;
+    height: 70%; 
+    position: absolute; /* Position relative to the viewport */
+    left: 5%; 
+    bottom: 25%; /* Distance from the bottom edge */
+
+  }
+  
+  .button-container {
+    position: absolute; /* Position relative to the viewport */
+    left: 6.5%;
+    bottom: 15%; /* Distance from the bottom edge */
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to a new line */
+    gap: 10px; /* Add space between buttons */
+    margin-top: 20px; /* Add some spacing from the iframe */
+  }
+  
+  .record-button {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    width: 50px; /* Set width for the circle */
+    height: 50px; /* Set height to match width */
+    font-size: 20px; /* Adjust font size for circular space */
+    color: white; /* Ensure text is readable */
+    background-color: #ff5722; /* Add a background color for better visibility */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make it a circle */
+    display: flex; /* Center text inside the circle */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer; /* Show pointer on hover */
+  }
+
+  .record-button:hover {
+    filter: brightness(0.9); /* Brighten the image */
+  }
+
+  .active-track {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    position: absolute; /* Position relative to the viewport */
+    left: 45%;
+    top: 5%; /* Distance from the bottom edge */
+    font-size: 40px;
+  }
+  
+  .active-text {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute; /* Position relative to the viewport */
+    left: 45%;
+    right: 35%;
+    top: 20%; 
+    font-size: 22px;
+    /* font-weight: bold; */
+    /* margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; */
+  }
+  
+  .active-image-container {
+    position: absolute; /* Position relative to the viewport */
+    right: 5%;
+    top: 16%; /* Distance from the bottom edge */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin-top: 20px; */
+  }
+  
+  .spinning-image {
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Maintain square aspect ratio */
+    animation: spin 10s linear infinite; /* Spinning animation */
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

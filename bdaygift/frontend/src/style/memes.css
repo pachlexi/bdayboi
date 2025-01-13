@@ -1,0 +1,53 @@
+/* styles the Memes.js page */
+
+.fullscreen-image {
+  background-image: url('../../public/images/memes/background.jpg');
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+}
+
+/* NFL PARTY BUTTON */
+.nflButton {
+  z-index: 10; /* Ensure the button is on top of other elements */
+  position: absolute; /* Absolute positioning relative to .cake-grid */
+  top: 49%; /* Adjust the vertical position to be above the records */
+  background-image: url('../../public/images/memes/linkCake.svg');
+  background-color: transparent;
+  background-size: cover;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Align the center of the button with the center of the container */
+  padding: 80px 100px; /* Adjust padding for appropriate button size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: transparent; 
+}
+
+.nflButton:hover {
+  filter: brightness(0.8); /* Brighten the image */
+}
+
+.lexi {
+  z-index: 9; /* Ensure the button is on top of other elements */
+  position: absolute; /* Absolute positioning relative to .cake-grid */
+  top: 68%; /* Adjust the vertical position to be above the records */
+  left: 46%; /* Center horizontally */
+  width: 150px; 
+  
+}
+
+/* Party People Image */
+.party-people {
+  z-index: 2; /* Ensure the image appears above most elements */
+  position: fixed; /* Fix the image to the viewport */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 10s ease-in; /* Add a fade-in effect */
+}
+
+.fade-in {
+  opacity: 1; /* Fully visible */
+}

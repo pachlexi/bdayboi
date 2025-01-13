@@ -1,0 +1,65 @@
+/* styles the navigation buttons at the bottom of the page */
+
+/* LIL DANCIN LEXI BUTTON AND ANIMATION */
+.button0 {
+    width: 60px;
+    height: 60px;
+    position: absolute; /* Position relative to the viewport */
+    bottom: 10px; /* Distance from the bottom edge */
+    left: 50%; /* Center horizontally relative to the viewport */
+    transform: translateX(-250%); /* Adjust position to be next to the center button */
+    z-index: 20; /* Place behind other elements if necessary */
+    background-image: url('../../public/images/nav/dancinLexi.png');
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    border: none; /* Remove default border */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  }
+
+  .button0:hover {
+    transform: translateX(-250%) scale(1.1); /* Enlarge on hover while staying next to the center button */
+  }
+  
+  /* LIL LINK BUTTON AND ANIMATION */
+.button1 {
+    width: 70px;
+    height: 80px;
+    position: absolute; /* Position relative to the viewport */
+    bottom: 10px; /* Distance from the bottom edge */
+    left: 50%; /* Center horizontally relative to the viewport */
+    transform: translateX(-50%); /* Adjust position to perfectly center */
+    z-index: 20; /* Place behind other elements if necessary */
+    background-image: url('../../public/images/nav/lilLink.png');
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Make it clickable */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  }
+  
+  .button1:hover {
+    transform: translateX(-50%) scale(1.1); /* Centered scaling effect */
+  }
+
+  /* LIL LEXI BUTTON AND ANIMATION */
+  .button2 {
+    width: 60px;
+    height: 60px;
+    position: absolute; /* Position relative to the viewport */
+    bottom: 10px; /* Distance from the bottom edge */
+    left: 50%; /* Center horizontally relative to the viewport */
+    transform: translateX(150%); /* Adjust position to be next to the center button */
+    z-index: 20; /* Place behind other elements if necessary */
+    background-image: url('../../public/images/nav/lilLexi.png');
+    background-size: cover;
+    background-position: center;
+    border: none; /* Remove default border */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+  }
+
+  .button2:hover {
+    transform: translateX(150%) scale(1.1); /* Enlarge on hover while staying next to the center button */
+  }
+  

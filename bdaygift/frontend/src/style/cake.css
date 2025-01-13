@@ -1,0 +1,191 @@
+/* styles the Cake.js page */
+
+/* Import the monoton montserrat and font */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;700&display=swap');
+
+/* BACKGROUND COLOR */
+.main {
+    height: 100vh; /* Full screen height */
+    background-color: #fff5e5; /* Background color for the page */
+  }
+
+  /* FADE IN ANIMATION*/
+.fade-in {
+    opacity: 0; /* Start fully transparent */
+    animation: fadeIn 3.5s forwards; /* Trigger fade-in animation */
+  }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+ /* ITS A PARTY BUTTON AND ANIMATION */
+  .itsAParty {
+    z-index: 10; /* Ensure the button is on top of other elements */
+    width: 250px;
+    height: 250px;
+    position: absolute; /* Position relative to the viewport */
+    left: 14%; 
+    bottom: 40%; /* Distance from the bottom edge */
+    transform: translateX(-50%); 
+    font-size: 16px; /* Font size */
+    background-image: url('../../public/images/cake/partyTicket.png');
+    background-color: transparent;
+    background-size: cover;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+  }
+  .itsAParty:hover {
+    filter: brightness(0.8); /* Brighten the image */
+  }
+
+/* SUS LINK BUTTON AND ANIMATION */
+   .susLink {
+    z-index: 10; /* Ensure the button is on top of other elements */
+    width: 100px;
+    height: 250px;
+    position: absolute; /* Position relative to the viewport */
+    right: -1%; 
+    bottom: 40%; /* Distance from the bottom edge */
+    transform: translateX(-50%); 
+    font-size: 16px; /* Font size */
+    background-image: url('../../public/images/cake/susLink.png');
+    background-color: transparent;
+    background-size: cover;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+  }
+  .susLink:hover {
+    filter: brightness(0.8); /* Brighten the image */
+  }
+  
+  /* HAPPY 21ST BDAY TEXT AND ANIMATION */
+.birthdayText {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    font-size: 3.2rem;
+    text-align: center;
+    padding-top: 50px; /* Add space above the text */
+    margin: 0; /* Remove default margins */
+    line-height: 1.2; /* Adjust line height for better spacing */
+  }
+.char {
+    display: inline-block; /* Treat each character as a block */
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth lift and color change */
+  }
+  
+.char:hover {
+    transform: translateY(-10px); /* Lift character upwards */
+  }
+
+ /* CLICK THE CAKE TEXT */
+.cakeText {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    font-size: 1.6rem;
+    position: absolute; /* Position candles absolutely within the grid */
+    /* bottom: 18%; */
+    top: 78%; 
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+  }
+
+/* WHAT IS A RECORD CAKE TEXT */
+.whatText {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    font-size: 1.0rem;
+    position: absolute; /* Position candles absolutely within the grid */
+    /* padding-top: 0%; */
+    bottom: 65%; /* Distance from the bottom edge */
+    right: 9%; /* Center horizontally */
+  }
+
+/* EXPLANATION TEXT */
+.explanationText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.0rem;
+    font-weight: 600; /* Regular weight */
+    position: absolute; /* Position candles absolutely within the grid */
+    bottom: 25%;
+    right: 1%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+    }
+
+  /* KANYE TEXT */
+.kanyeText {
+    font-family: 'Monoton', cursive; /* Use Monoton font */
+    font-size: 1.3rem;
+    position: absolute; /* Position candles absolutely within the grid */
+    bottom: 35%; /* Distance from the bottom edge */
+    left: 10%; /* Center horizontally */
+  }
+
+    /* TIKTOK RIZZ PARTY TEXT */
+.tiktokText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.0 rem;
+    font-weight: 600; /* Regular weight */
+    position: absolute; /* Position candles absolutely within the grid */
+    bottom: 7%; /* Distance from the bottom edge */
+    left: 6%; /* Center horizontally */
+  }
+  
+/* CONFETTI BUTTON */
+.confettiButton {
+    z-index: 10; /* Ensure the button is on top of other elements */
+    position: absolute; /* Absolute positioning relative to .cake-grid */
+    top: 280px; /* Adjust the vertical position to be above the records */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Align the center of the button with the center of the container */
+    padding: 150px 230px; /* Adjust padding for appropriate button size */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: transparent; /* Button background color */
+    border: transparent; 
+  }
+  
+  /* CANDLES */
+.candles {
+    position: absolute; /* Position candles absolutely within the grid */
+    top: 19%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the image */
+    width: 140px; /* Set the image width */
+    height: auto; /* Maintain aspect ratio */
+    }
+
+  /* RECORD CAKE AND ANIMATION */
+.cake-grid {
+    position: relative; /* Set the grid to relative for positioning children */
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all rows horizontally */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center; /* Center items within each row */
+  }
+  
+  .record {
+    width: 80px; /* Set the width of each record */
+    height: 80px; /* Maintain a square aspect ratio */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    animation: spin 5s linear infinite; /* Smooth spinning animation */
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -8,7 +8,14 @@ import sussy from "./soundEffects/sussy.mp3";
 
 function Cake() {
   // Create a ref for the audio object
-  const bdayAudio = useRef(new Audio(hbdsong));
+  // const bdayAudio = useRef(new Audio(hbdsong));
+  const bdayAudio = useRef(
+    new Audio(
+      // hbdsong
+      "https://github.com/pachlexi/audios/blob/main/hbdSong.mp3?raw=true"
+    )
+  );
+
   const itsapartyAudio = useRef(new Audio(itsaparty));
   const sussyAudio = useRef(new Audio(sussy));
 
@@ -17,7 +24,7 @@ function Cake() {
 
     if (!audio.paused) {
       // If audio is already playing, do nothing
-      return;
+      // return;
     }
 
     // Play the audio

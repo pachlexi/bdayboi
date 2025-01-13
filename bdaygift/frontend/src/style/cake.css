@@ -56,7 +56,9 @@
     bottom: 40%; /* Distance from the bottom edge */
     transform: translateX(-50%); 
     font-size: 16px; /* Font size */
-    background-image: url('../../public/images/cake/susLink.png');
+    /* background-image: url('../../public/images/cake/susLink.png'); */
+    background-image: url('../../public/images/cake/blueRecord.svg');
+
     background-color: transparent;
     background-size: cover;
     border: none; /* Remove default border */

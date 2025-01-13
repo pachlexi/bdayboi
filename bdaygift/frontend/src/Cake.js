@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import confetti from "canvas-confetti";
-import { ReactComponent as Candles } from "/images/cake/candles.svg";
-
 import "./style/cake.css";
+// import candles from "/images/cake/candles.svg";
 
 function Cake() {
   const confettiAudioRef = useRef(null);
@@ -132,10 +131,9 @@ function Cake() {
 
       {/* Candles Image */}
       {/* <img className="candles" src="/images/cake/candles.svg" alt="Candles" /> */}
-      <div className="candles">
-        <Candles />
-      </div>
-
+      <svg className="candles">
+        <path alt="Candles" />
+      </svg>
       {/* Record Cake */}
       <div className="cake-grid">
         {[

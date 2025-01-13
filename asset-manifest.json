@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/bdayboi/static/css/main.301786e6.css",
+    "main.js": "/bdayboi/static/js/main.38c06e07.js",
+    "static/media/linkCake.svg": "/bdayboi/static/media/linkCake.2906788fd9c58e3f19d4.svg",
+    "static/media/lilLink.png": "/bdayboi/static/media/lilLink.b581bab10a58e334f926.png",
+    "static/media/lilLexi.png": "/bdayboi/static/media/lilLexi.7041798848ab16b2ec6e.png",
+    "static/media/susLink.png": "/bdayboi/static/media/susLink.1c639e698c549549aa75.png",
+    "static/media/partyTicket.png": "/bdayboi/static/media/partyTicket.bba1c8f4eeb34eaa433c.png",
+    "static/media/dancinLexi.png": "/bdayboi/static/media/dancinLexi.920eaef104d3771ea3e7.png",
+    "static/media/background.jpg": "/bdayboi/static/media/background.3ad4c7c065e7f942ff73.jpg",
+    "index.html": "/bdayboi/index.html",
+    "main.301786e6.css.map": "/bdayboi/static/css/main.301786e6.css.map",
+    "main.38c06e07.js.map": "/bdayboi/static/js/main.38c06e07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.301786e6.css",
+    "static/js/main.38c06e07.js"
+  ]
+}

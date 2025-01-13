@@ -1,6 +1,10 @@
 import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import confetti from "canvas-confetti";
+
+import blueRecord from "../public/images/cake/blueRecord.svg";
+import candles from "../public/images/cake/candles.svg";
+
 import "./style/cake.css";
 
 function Cake() {
@@ -129,7 +133,7 @@ function Cake() {
       ></audio>
 
       {/* Candles Image */}
-      <img className="candles" src="/images/cake/candles.svg" alt="Candles" />
+      <img className="candles" src={candles} alt="Candles" />
 
       {/* Record Cake */}
       <div className="cake-grid">
